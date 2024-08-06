@@ -1,0 +1,22 @@
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  #circuleText {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    background-color: #3835cd;
+  }
+  .circleActionButton {
+    border-radius: 50%;
+    height: 11rem;
+    width: 11rem;
+    background-color: #3835cd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+  .subTitle__container p{
+    font-size: 2px;
+  }
+}

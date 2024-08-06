@@ -1,0 +1,367 @@
+.burguer {
+    @media (min-width: 480px) {
+        display: none;
+    }
+}
+
+.navbar__container {
+    display: flex;
+    width: 90%;
+    height: 10vh;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5625rem;
+    flex-shrink: 0;
+    border-bottom: 1px solid #ed7644;
+    position: absolute;
+    z-index: 4;
+    top: 0;
+}
+
+.navbarElements__container {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1rem;
+}
+
+.navbarLogo__container {
+    width: 10%;
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 1rem;
+}
+
+.navbarElements__container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+    letter-spacing: 0.0225rem;
+}
+
+.navbarElements__container ul li:last-child {
+    margin-left: 5rem;
+}
+
+.navbarElements__container ul li {
+    margin-left: 5rem;
+    color: white;
+    display: inline-block;
+}
+
+.services_li:hover .services_menu__container {
+    display: block;
+}
+
+.services_menu__container {
+    height: 50vh;
+    width: 100%;
+    background-image: url("../../../../assets/img/services_menu_bg.png");
+    background-size: cover;
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.navbarElements_list li a.active {
+    border-bottom: 2px solid #ed7644;
+}
+
+.menuServicesContainer {
+    position: absolute;
+    width: 350px;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.4s);
+    height: fit-content;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 99999;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px;
+    backdrop-filter: blur(10px);
+    
+}
+
+@keyframes itemMenuTransition {
+    from{
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to{
+        transition: translateX(0px);
+        opacity: 1;
+    }
+}
+.menuServicesContainer .item{
+    padding: 10px;
+    cursor: pointer;
+    
+    opacity: 0;
+    animation-name: itemMenuTransition;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.menuServicesContainer .item .name .title{
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.menuServicesContainer .item .name .subtitle{
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.menuServicesContainer .item:hover{
+    border-left: 3px solid #ed7644;
+}
+
+.navbarElements_list li:hover >  .menuServicesContainer{
+    display: flex;
+}
+.menuServicesContainer:hover{
+    display: flex;
+}
+
+.links {
+    position: absolute;
+    top: -700px;
+    left: -2000px;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    transition: all 0.5s ease;
+
+    a {
+        color: white;
+        font-size: 2rem;
+        display: block;
+    }
+
+
+
+    @media (min-width: 768px) {
+        position: initial;
+        margin: 0;
+
+        a {
+            font-size: 1rem;
+            color: white;
+            display: inline;
+        }
+
+        display: block;
+    }
+}
+
+@media(max-width:768px) {
+    .navbar__container {
+        background-color: rgba(0, 0, 0, 0.6);
+        /* backdrop-filter: blur(5px); */
+    }
+}
+
+/* Estilos para dispositivos móviles en orientación vertical */
+@media only screen and (max-width: 480px) and (orientation: portrait) {
+    .burguer {
+        display: block;
+        z-index: 9999;
+    }
+
+    .navbar__container {
+        width: 100%;
+        z-index: 9999;
+        height: 6rem;
+    }
+
+    .navbarElements__container {
+        height: 100px;
+        width: 450px;
+        background-color: #ed7644;
+        z-index: 1;
+        width: 50%;
+        position: absolute;
+        top: -700px;
+        left: -2000px;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        transition: all 0.5s ease;
+    }
+
+    .menudiv.active {
+        position: fixed;
+        /* Esto asegura que el elemento esté fijo en la pantalla */
+        top: 0;
+        /* Lo posiciona en la parte superior */
+        left: 0;
+        /* Lo posiciona en la parte izquierda */
+        width: 100%;
+        /* Ocupa toda la anchura de la pantalla */
+        height: 100vh;
+        /* Ocupa toda la altura de la pantalla */
+        background-color: black;
+        /* Color de fondo blanco */
+        z-index: 9998;
+        /* Asegura que esté al frente de otros elementos */
+        overflow-x: scroll;
+    }
+
+    .navbarElements__container.active {
+        position: fixed;
+        /* Esto asegura que el elemento esté fijo en la pantalla */
+
+        left: 0;
+        /* Lo posiciona en la parte izquierda */
+        width: 100%;
+        /* Ocupa toda la anchura de la pantalla */
+        right: 0;
+        background-color: black;
+        /* Color de fondo blanco */
+        z-index: 1;
+        /* Asegura que esté al frente de otros elementos */
+        overflow-y: scroll;
+        top: 10%;
+        height: 90%;
+        z-index: 9999;
+        display: flex;
+        padding: 30px 0;
+        align-items: flex-start;
+    }
+
+    .navbarElements__container.active ul {
+
+        /* flex-direction: column;
+    top: 10%; */
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        z-index: 9999;
+
+    }
+
+    .navbarElements__container.active ul li {
+        /* Estilos para los elementos de la lista */
+        margin-left: 0;
+        /* Quita el margen izquierdo */
+        color: white;
+        /* Color del texto */
+        display: block;
+        /* Cambia a bloque para ocupar todo el ancho disponible */
+        z-index: 9999;
+        /* Asegura que estén al frente */
+        font-size: 3rem;
+        height: fit-content;
+        min-height: 5rem;
+        padding-top: 2rem;
+    }
+
+    /*
+  .navbarElements__container.active li {
+    margin-top: 20%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+  } */
+    .navbar__container.active {
+
+        border-bottom: 1px solid #ed7644;
+
+        /* Agrega cualquier otro estilo que desees */
+    }
+
+    .navbar__container {
+        position: fixed;
+        z-index: 9999;
+
+        border-bottom: 1px solid #ed7644;
+
+        /* Agrega cualquier otro estilo que desees */
+    }
+
+    .navbarLogo__container {
+        width: 100%;
+        z-index: 9999;
+    }
+
+    .menuServicesContainer{
+        display: flex;
+        position: relative;
+        width: 100%;
+        padding-top: 30px;
+    }
+}
+
+/* Estilos para dispositivos móviles en orientación horizontal */
+@media only screen and (max-height: 480px) and (orientation: landscape) {
+
+    /* .burguer { 
+    z-index: 1;
+  } */
+    .burguer {
+        display: block;
+    }
+
+    .navbar__container {
+        width: 40rem !important;
+        z-index: 9999;
+        margin-top: 15px;
+    }
+
+    .navbarLogo__container {
+        width: 100%;
+    }
+
+    .navbarElements__container {
+        height: 100px;
+        width: 450px;
+        background-color: #ed7644;
+        z-index: 1;
+        width: 50%;
+        position: absolute;
+        top: -700px;
+        left: -2000px;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        transition: all 0.5s ease;
+    }
+
+    .menudiv.active {
+        position: fixed;
+        /* Esto asegura que el elemento esté fijo en la pantalla */
+        top: 7vh;
+        /* Lo posiciona en la parte superior */
+        left: 0;
+        /* Lo posiciona en la parte izquierda */
+        width: 100px;
+        /* Ocupa toda la anchura de la pantalla */
+        height: 100%;
+        /* Ocupa toda la altura de la pantalla */
+        background-color: white;
+        /* Color de fondo blanco */
+        z-index: 9999;
+        /* Asegura que esté al frente de otros elementos */
+    }
+}

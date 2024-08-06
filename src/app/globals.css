@@ -1,0 +1,361 @@
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+
+    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
+    --secondary-glow: linear-gradient(
+      to bottom right,
+      rgba(1, 65, 255, 0),
+      rgba(1, 65, 255, 0),
+      rgba(1, 65, 255, 0.3)
+    );
+
+    --tile-start-rgb: 2, 13, 46;
+    --tile-end-rgb: 2, 5, 19;
+    --tile-border: conic-gradient(
+      #ffffff80,
+      #ffffff40,
+      #ffffff30,
+      #ffffff20,
+      #ffffff10,
+      #ffffff10,
+      #ffffff80
+    );
+
+    --callout-rgb: 20, 20, 20;
+    --callout-border-rgb: 108, 108, 108;
+    --card-rgb: 100, 100, 100;
+    --card-border-rgb: 200, 200, 200;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(255,255,255)
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+.arrow_button{
+  height: 3rem;
+  background-color: transparent;
+  width: auto;
+  border-radius: 40px;
+  color: black;
+  display: flex;
+  align-items: center;
+  border: none;
+  justify-content: space-around;
+  padding: 0 1.5rem;
+  font-size: 18px;
+  font-weight: 400;
+  position: relative;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.arrow_button_dark{
+  height: 3rem;
+  background-color: transparent;
+  border: none;
+  width: auto;
+  border-radius: 40px;
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 1.5rem;
+  font-size: 18px;
+  font-weight: 400;
+  position: relative;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.action_button{
+  height: 3rem;
+  background-color: transparent;
+  width: auto;
+  border: 1px solid rgb(0,0,0);
+  border-radius: 40px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 1.5rem;
+  font-size: 18px;
+  font-weight: 400;
+  position: relative;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.action_button_dark{
+  height: 3rem;
+  background-color: transparent;
+  width: auto;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 40px;
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 1.5rem;
+  font-size: 18px;
+  font-weight: 400;
+  position: relative;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.section_title{
+  width:fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .6rem 1.5rem .4rem 1.5rem;
+  color: #F05413;
+  border: 1px solid #EAC8B9;
+  border-radius: 40px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+}
+
+.arrow_icon {
+  transition: transform 0.3s ease; /* Agrega una transición al cambio de rotación */
+}
+
+.circle_arrow {
+  position: absolute;
+  top: 50%;
+  right: -10%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: #F05413; /* Cambia el color del círculo según sea necesario */
+  animation: circleGrow 0.5s ease forwards; /* Agrega una animación de crecimiento al círculo */
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  right: 1%;
+  transform: translate(-50%, -50%);
+  width: 40px; /* Ajusta el tamaño del círculo según sea necesario */
+  height: 40px; /* Ajusta el tamaño del círculo según sea necesario */
+  border-radius: 50%;
+  background-color: #F05413; /* Cambia el color del círculo según sea necesario */
+  animation: circleGrow 0.5s ease forwards; /* Agrega una animación de crecimiento al círculo */
+}
+
+@keyframes circleGrow {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.circle .leave {
+  animation: circleShrink 0.5s ease forwards;
+}
+
+@keyframes circleShrink {
+  from {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+.action_button svg{
+  margin-left: 1.5rem;
+}
+
+.action_button_dark svg{
+  margin-left: 1.5rem;
+}
+
+.action_movil{
+  display: none;
+}
+
+.circleEyeActionButton {
+  border-radius: 50%;
+  height: 15rem;
+  width: 15rem;
+  background-color: #3835cd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+  transition: background-color .3s ease-in-out;
+}
+
+.circleEyeActionButton svg:first-child {
+  position: absolute;
+  animation: rotateClockwise 15s linear infinite;
+  transition: transform 0.5s;
+}
+
+.circleEyeActionButton svg {
+  position: absolute;
+}
+
+.circleEyeActionButton:hover svg:first-child {
+  animation: rotateCounterClockwise 1s linear 1,
+    rotateContinuous 15s linear infinite;
+}
+
+.circleEyeActionButton:hover .eye_icon {
+  position: absolute;
+  transform: scale(1.2);
+}
+
+.eye_icon{
+  width: 70px;
+  height: 70px;
+  transition: transform 0.3s;
+}
+
+
+.circleEyeActionButton:hover{
+  background-color: #F05413;
+}
+
+.circleActionButton {
+  border-radius: 50%;
+  height: 15rem;
+  width: 15rem;
+  background-color: #3835cd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.circleActionButton svg:first-child {
+  position: absolute;
+  animation: rotateClockwise 15s linear infinite;
+  transition: transform 0.5s;
+}
+
+.circleActionButton svg {
+  position: absolute;
+}
+
+.circleActionButton:hover svg:first-child {
+  animation: rotateCounterClockwise 1s linear 1,
+    rotateContinuous 15s linear infinite;
+}
+
+.circleActionButton:hover svg:last-child {
+  position: absolute;
+  transform: rotate(45deg);
+  transition: transform 0.3s;
+}
+
+@keyframes rotateClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateCounterClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-180deg);
+  }
+}
+
+@keyframes rotateContinuous {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.badge{
+  height: 2rem;
+  color: #898989;
+  width:max-content;
+  text-transform: uppercase;
+  padding: .3rem 1rem .2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #EEEEEE;
+  border-radius: 40px;
+}
+
+.badge_dark{
+  height: 2rem;
+  color: #A0A0A0;
+  width:max-content;
+  text-transform: uppercase;
+  padding: .3rem 1rem .2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2A2A2A;
+  border-radius: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+  .section_title{
+    width:fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem .75rem .2rem .75rem;
+    color: #F05413;
+    border: 1px solid #EAC8B9;
+    border-radius: 40px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+  }
+
+  /* .action_desktop{
+    display: none;
+  } */
+}
